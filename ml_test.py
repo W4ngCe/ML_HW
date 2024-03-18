@@ -48,26 +48,7 @@ print(f"Error Rate (predictions with >10% error): {error_rate:.2f}")
 
 
 
-# 加载新的预测数据集
-new_data = pd.read_csv('C:/Users/fengz/Desktop/Q2.csv')
 
-# 确保列名正确，这里不应该包含 'Price'
-expected_features = ['Years', 'Number_of_Doors', 'Color']
-
-# 检查列名是否匹配
-if not all(column in new_data.columns for column in expected_features):
-    raise ValueError(f"The new data must only contain the following columns: {expected_features}")
-
-
-# 使用训练好的模型进行预测
-# 假设 random_forest_model 是已经训练好的模型
-try:
-    predicted_prices = random_forest_model.predict(new_data)
-except Exception as e:
-    print(f"Error during prediction: {e}")
-
-# 输出预测的价格
-print(predicted_prices)
 
 
 print("Black =", 0, "Blue =", 1, "Red =", 2, "White =", 3)
